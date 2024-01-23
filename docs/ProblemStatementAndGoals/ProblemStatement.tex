@@ -1,56 +1,90 @@
 \documentclass{article}
 
+\usepackage{amsmath, mathtools}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{colortbl}
+\usepackage{xr}
+\usepackage{hyperref}
+\usepackage{longtable}
+\usepackage{xfrac}
 \usepackage{tabularx}
+\usepackage{float}
+\usepackage{siunitx}
 \usepackage{booktabs}
+\usepackage{caption}
+\usepackage{pdflscape}
+\usepackage{afterpage}
+\usepackage{indentfirst} 
+\usepackage[square]{natbib}
 
-\title{Problem Statement and Goals\\\progname}
 
-\author{\authname}
+\hypersetup{       
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=red,          % color of internal links (change box color with linkbordercolor)
+    citecolor=green,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=cyan           % color of external links
+}
 
-\date{}
+\title{Problem Statement and Goals\\Retinal Vessel Segmentation}
 
-\input{../Comments}
-\input{../Common}
+\author{Xinyu Ma}
+
+\date{January 18th, 2024}
+
+\input{}
+\input{}
 
 \begin{document}
 
 \maketitle
-
 \begin{table}[hp]
 \caption{Revision History} \label{TblRevisionHistory}
 \begin{tabularx}{\textwidth}{llX}
 \toprule
 \textbf{Date} & \textbf{Developer(s)} & \textbf{Change}\\
 \midrule
-Date1 & Name(s) & Description of changes\\
-Date2 & Name(s) & Description of changes\\
-... & ... & ...\\
+18 January 2024 & \quad Xinyu Ma & Initial release of document\\
+
 \bottomrule
 \end{tabularx}
 \end{table}
 
 \section{Problem Statement}
 
-\wss{You should check your problem statement with the
-\href{https://github.com/smiths/capTemplate/blob/main/docs/Checklists/ProbState-Checklist.pdf}
-{problem statement checklist}.}
-\wss{You can change the section headings, as long as you include the required information.}
+Retinal fundus images contain rich retinal blood vessel characteristics. Analyzing the length, width, curvature, bifurcation pattern and other structural characteristics of blood vessels can obtain the pathological characteristics of many fundus diseases, which is of great significance for the prevention and treatment of these diseases. Retinal vessel segmentation is a necessary step to obtain these structural characteristics. An accurate segmentation result will make subsequent feature extraction and anomaly detection analysis more efficient.
+
+Due to the complex tree structure of retinal blood vessels, artificial retinal blood vessel segmentation has many problems such as error-prone, time-consuming, and tedious. Automatic segmentation algorithms can help doctors analyze complex fundus images, and the accuracy is gradually improving, which has attracted more attention in recent years.
 
 \subsection{Problem}
 
+Accurate segmentation of retinal blood vessels is difficult because of the following reasons: (1) the scale of retinal blood vessels changes greatly. It includes very tiny capillaries, with a minimum diameter of only 1 to 2 pixels wide, and the contrast is lower than the main arteries and veins of retinal blood vessels \cite{wu2018multiscale}; (2) retinal blood vessels have complex structures similar to trees, such as bifurcations and crossing structures \cite{lian2019global}; (3) some retinal blood vessels have microaneurysms, exudates and other lesions, which increases the difficulty of segmentation \cite{lian2019global}.
+
+The existing medical image segmentation neural networks are mainly based on fully convolutional neural networks and encoding-decoding networks. However, the accuracy of most segmentation results is not accurate, and there is also much space for the improvement in model performance. The project aims to improve the existing model to obtain high-precision and high-accuracy retinal blood vessel segmentation images.
+
 \subsection{Inputs and Outputs}
 
-\wss{Characterize the problem in terms of ``high level'' inputs and outputs.  
-Use abstraction so that you can avoid details.}
+The input is a retinal fundus image and the output is the segmentation map corresponding to the retinal fundus image. The segmentation map is a black and white image, in which white pixels represent blood vessels and black pixels correspond to the background.
 
 \subsection{Stakeholders}
 
+The companies that develops tools to assist doctors in detecting and diagnosing retinal diseases and companies that develops retinal image analysis tools or retinal surgery auxiliary machines. Stakeholders also include hospitals in poor and remote areas where there is a shortage of ophthalmologists.
+
 \subsection{Environment}
 
-\wss{Hardware and software}
+It can be deployed on any operating system including Windows, Linux and Mac OS.   
 
 \section{Goals}
+The goal of the project is to improve the network structure of the existing model and improve the segmentation accuracy.  
+
 
 \section{Stretch Goals}
+
+We will generate the final high-accuracy retinal blood vessel segmentation image and and compare it with the results of existing methods.
+
+\bibliographystyle {plain}
+\bibliography{ref}
 
 \end{document}
