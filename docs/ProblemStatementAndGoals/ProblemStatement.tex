@@ -32,7 +32,7 @@
 
 \author{Xinyu Ma}
 
-\date{January 18th, 2024}
+\date{January 24th, 2024}
 
 \input{}
 \input{}
@@ -47,14 +47,14 @@
 \textbf{Date} & \textbf{Developer(s)} & \textbf{Change}\\
 \midrule
 18 January 2024 & \quad Xinyu Ma & Initial release of document\\
-
+24 January 2024 & \quad Xinyu Ma & Add the definition of segmentation\\
 \bottomrule
 \end{tabularx}
 \end{table}
 
 \section{Problem Statement}
 
-Retinal fundus images contain rich retinal blood vessel characteristics. Analyzing the length, width, curvature, bifurcation pattern and other structural characteristics of blood vessels can obtain the pathological characteristics of many fundus diseases, which is of great significance for the prevention and treatment of these diseases. Retinal vessel segmentation is a necessary step to obtain these structural characteristics. An accurate segmentation result will make subsequent feature extraction and anomaly detection analysis more efficient.
+Retinal fundus images contain rich retinal blood vessel characteristics. Analyzing the length, width, curvature, bifurcation pattern and other structural characteristics of blood vessels can obtain the pathological characteristics of many fundus diseases, which is of great significance for the prevention and treatment of these diseases. Retinal vessel segmentation is a necessary step to obtain these structural characteristics. Segmentation means removing other background information in the retinal image and retaining only the blood vessels in the image. In the final image, black pixels represents the background and white pixels represents the blood vessels in the retinal image. An accurate segmentation result will make subsequent feature extraction and anomaly detection analysis more efficient.
 
 Due to the complex tree structure of retinal blood vessels, artificial retinal blood vessel segmentation has many problems such as error-prone, time-consuming, and tedious. Automatic segmentation algorithms can help doctors analyze complex fundus images, and the accuracy is gradually improving, which has attracted more attention in recent years.
 
